@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Online Base64 Encoder</title>
+<link rel="license" href="https://creativecommons.org/licenses/by/4.0/"/>
+<link rel="canonical" href="https://kecon.se/tools/base64decoder/"/>
+<meta name="author" content="Kenny Colliander Nordin">
+<meta name="description" content="Online Base64 decoder which decode locally in your browser to ensure privacy."/>
+<meta name="keywords" content="online, base64, decoder, privacy"/>
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<script>
+function encode() {
+	document.getElementById("plain").value = window.atob(document.getElementById("encoded").value)
+}
+
+function toClipboard() {
+	document.getElementById("plain").select();
+	document.execCommand("Copy");
+}
+
+(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11&appId=1774766519209413';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+<link rel="stylesheet" href="../../css/tools.css" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<header class="pure-menu pure-menu-horizontal">
+		<ul class="pure-menu-list">
+			<li class="pure-menu-item">
+				<a href="/">kecon.se</a>
+			</li>
+			<li class="pure-menu-item">
+				<a href="/tools/base64encoder">Base64 Encoder</a>
+			</li>
+			<li class="pure-menu-item">
+				<a href="/tools/base64decoder">Base64 Decoder</a>
+			</li>
+		</ul>
+	</header>
+	<article class="main">
+		<h1>Online Base64 Decoder</h1>
+		<p>This service helps you to decode Base64 online. The conversion is locally processed in your browser to ensure your privacy.</p>
+		<p>The text is decoded to UTF-8 which is the most common encoding on the web and supports all languages.</p>
+		<p>More information regarding Base64 is found at <a href="https://en.wikipedia.org/wiki/Base64" rel="nofollow">Wikipedia</a>.</p>
+		<fieldset class="tools">
+		<legend>Online Base64 Decoder</legend>
+		<form>
+			<ul>
+				<li>
+					<label for="encoded">Base64 Encoded</label>
+					<textarea rows="6" cols="80" id="encoded"></textarea>
+				</li>
+				<li>
+					<button type="button" onclick="javascript:encode()">Decode</button>
+				<li>
+				<li>
+					<label for="plain">Plain text</label>
+					<textarea rows="6" cols="80" id="plain" readonly="readonly"></textarea>
+				</li>
+				<li>
+					<button type="button" onclick="javascript:toClipboard()">Clipboard</button>
+				</li>
+			</ul>
+		</form>
+		</fieldset>
+		<section>
+			<h2>Why this service?</h2>
+			<p>Many online Base64 decoders is sending data back to their servers for processing which means that it's impossible for you to know if they store or use your data later.</p>
+		</section>
+		<footer>
+			<div class="fb-like" data-href="https://kecon.se/tools/base64decoder/" data-layout="standard" data-action="recommend" data-size="small" data-show-faces="true" data-share="true"></div>
+			<p><a href="https://kecon.se/privacy">Website Privacy Policy</a></p>
+		</footer>
+	</article>
+</body>
+</html>
