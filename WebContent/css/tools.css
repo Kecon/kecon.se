@@ -123,3 +123,8 @@ fieldset {
 	font-weight: 700;
 	color: #676d79;
 }
+
+.fb-like {
+	margin-right: 2.5%;
+	float: right;
+}
